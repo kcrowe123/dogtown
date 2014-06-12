@@ -1,5 +1,0 @@
-<list name="days" cascade="all-delete-orphan">
-	<key column="TOURNAMENT_ID" not-null="true" update="true"/> 
-	<list-index column="ORDER_NBR"/> 
-	<one-to-many class="com.dogtown.domain.day.Day"/>
-</list>
