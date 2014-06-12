@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+       default-lazy="false"      
+>
+
+    <class
+        name="com.dogtown.domain.skin.Skins"
+        table="skin"
+    >
+
+        <id
+            name="id"
+            column="SKIN_ID"
+            type="long"
+        >
+            <generator class="native">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-Skins.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="NAME"
+        />
+
+        <many-to-one
+            name="day"
+            class="com.dogtown.domain.day.Day"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            lazy="proxy"           
+        >
+            <column
+                name="DAY_ID" 
+                not-null="true"
+            />
+        </many-to-one>
+
+        <set
+            name="scorecards"
+            table="SKIN_SCORECARD"
+            lazy="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+            <key
+                column="SKIN_ID"
+            >
+            </key>
+
+            <many-to-many
+                class="com.dogtown.domain.scorecard.Scorecard"
+                column="SCORECARD_ID"
+                outer-join="auto"
+             />
+
+        </set>
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Skins.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

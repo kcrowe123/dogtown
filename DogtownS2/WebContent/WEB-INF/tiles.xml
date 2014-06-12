@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="baseLayout" template="/layout/BaseLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/layout/Header.jsp" />
+		<put-attribute name="menu" value="/layout/Menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/layout/Footer.jsp" />
+	</definition>
+
+	<definition name="/welcome.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Welcome" />
+		<put-attribute name="body" value="/Welcome.jsp" />
+	</definition>
+
+	<definition name="/customer.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Customer Form" />
+		<put-attribute name="body" value="/Customer.jsp" />
+	</definition>
+    <definition name="/user.tiles" extends="baseLayout">
+		<put-attribute name="title" value="User Form" />
+		<put-attribute name="body" value="/User.jsp" />
+	</definition>
+	<definition name="/customer.success.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Customer Added" />
+		<put-attribute name="body" value="/SuccessCustomer.jsp" />
+	</definition>
+    <definition name="/players.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Dogtown Invitational - Player" />
+		<put-attribute name="body" value="/player/playerListing.jsp" />
+	</definition>
+    <definition name="/tournament.tiles" extends="baseLayout">
+		<put-attribute name="title">Tournament Listing</put-attribute>
+		<put-attribute name="body" value="/tournament/tournamentListing.jsp" />
+	</definition>
+	<definition name="/scorecardTournament.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Scorecard Tournament Listing" />
+		<put-attribute name="body" value="/scorecard/scorecardTournamentListing.jsp" />
+	</definition>
+    <definition name="/scoreboardTournament.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Scoreboard Tournament Listing" />
+		<put-attribute name="body" value="/scoreboard/scoreboardTournamentListing.jsp" />
+	</definition>
+    <definition name="/skinTournament.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Skin Tournament Listing" />
+		<put-attribute name="body" value="/skin/skinTournamentListing.jsp" />
+	</definition>
+	<definition name="/skinDay.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Skin Tournament Listing" />
+		<put-attribute name="body" value="/skin/skinDayListing.jsp" />
+	</definition>
+    <definition name="/skinPlayer.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Skin Tournament Listing" />
+		<put-attribute name="body" value="/skin/skinPlayerForm.jsp" />
+	</definition>
+    <definition name="/scorecardPlayer.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Scorecard Player Listing" />
+		<put-attribute name="body" value="/scorecard/scorecardPlayerListing.jsp" />
+	</definition>
+	<definition name="/scorecardForm.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Scorecard" />
+		<put-attribute name="body" value="/scorecard/scorecardForm.jsp" />
+	</definition>
+    <definition name="/tournamentAddPlayerForm.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Tournament" />
+		<put-attribute name="body" value="/tournament/tournamentAddPlayerForm.jsp" />
+	</definition>
+    <definition name="/tournamentForm.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Tournament" />
+		<put-attribute name="body" value="/tournament/tournamentForm.jsp" />
+	</definition>
+    <definition name="/player.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Tournament Player" />
+		<put-attribute name="body" value="/player/playerListing.jsp" />
+	</definition>
+    <definition name="/playerForm.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Tournament Player" />
+		<put-attribute name="body" value="/player/playerForm.jsp" />
+	</definition>	
+</tiles-definitions>

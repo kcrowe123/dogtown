@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="DogtownS2">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="DogtownService.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/DogtownService/DogtownService">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="DogtownIntegration.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/DogtownIntegration/DogtownIntegration">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="DogtownFramework.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/DogtownFramework/DogtownFramework">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="DogtownDomain.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/DogtownDomain/DogtownDomain">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/DogtownS2/build/classes"/>
+        <property name="context-root" value="DogtownS2"/>
+    </wb-module>
+</project-modules>

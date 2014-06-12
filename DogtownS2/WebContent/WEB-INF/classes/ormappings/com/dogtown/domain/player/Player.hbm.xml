@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+       default-lazy="false"      
+>
+
+    <class
+        name="com.dogtown.domain.player.Player"
+        table="player"
+    >
+
+        <id
+            name="id"
+            column="PLAYER_ID"
+            type="long"
+        >
+            <generator class="native">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-Player.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="firstName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="FIRST_NAME"
+        />
+
+        <property
+            name="lastName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="LAST_NAME"
+        />
+
+        <property
+            name="suffix"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="SUFFIX"
+        />
+
+        <component
+            name="address"
+            class="com.dogtown.domain.player.Address"
+        >
+
+        <property
+            name="street"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="STREET"
+        />
+
+        <property
+            name="city"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="CITY"
+        />
+
+        <property
+            name="state"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="STATE"
+        />
+
+        <property
+            name="zipCode"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="ZIP_CODE"
+        />
+
+        </component>
+
+        <property
+            name="phoneNumber"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="PHONE_NUMBER"
+        />
+
+        <property
+            name="emailAddress"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="EMAIL_ADDRESS"
+        />
+
+        <property
+            name="dateOfBirth"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            column="DATE_OF_BIRTH"
+        />
+
+        <set
+            name="scorecards"
+            lazy="false"
+            inverse="true"
+            cascade="all"
+            sort="unsorted"
+        >
+
+            <key
+                column="PLAYER_ID"
+            >
+            </key>
+
+            <one-to-many
+                  class="com.dogtown.domain.scorecard.Scorecard"
+            />
+
+        </set>
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Player.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

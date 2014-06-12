@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<query name="retrieveAllFlights"><![CDATA[
+		  from com.dogtown.domain.flight.Flight as flight
+		  order by flight.name
+	]]></query>	
+	<query name="retrieveFlightById"><![CDATA[
+		  from com.dogtown.domain.flight.Flight as flight
+		 where flight.id = :id
+	]]></query>	
+	<query name="retrieveFlights"><![CDATA[
+		  from com.dogtown.domain.flight.Flight as flight
+		 where flight in (:flights)
+	]]></query>		
+</hibernate-mapping>

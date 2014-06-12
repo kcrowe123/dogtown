@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<query name="retrieveAllPlayers"><![CDATA[
+		  from com.dogtown.domain.player.Player as player
+		  order by player.lastName
+	]]></query>	
+	<query name="retrievePlayerById"><![CDATA[
+		  from com.dogtown.domain.player.Player as player
+		 where player.id = :id
+	]]></query>	
+	<query name="retrieveEligiblePlayers"><![CDATA[
+		 from com.dogtown.domain.player.Player as player
+		 where player not in (select scorecard.player
+		 						from com.dogtown.domain.scorecard.Scorecard as scorecard
+		 						 where scorecard.day.tournament.id = :id)
+		 order by player.lastName
+	]]></query>		
+</hibernate-mapping>
