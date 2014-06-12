@@ -26,7 +26,7 @@
 	<thead>         
 		<tr>    
 
-		        <th>Tournament Name</th>             
+		        <th>Name</th>             
 				<th>First Day</th>             
 				<th>Second Day</th> 
 				<th># Pl</th>                      	     
